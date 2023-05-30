@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Creation</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+<header>
+    <div class="container mt-4">
+        <form th:action="@{/updateemployee}" method="post">
+
+<!--            <div class="form-group">-->
+<!--                <label for="id">Employee ID:</label>-->
+<!--                <input type="text" id="id" name="id" class="form-control" th:value="${employeeJsp.id}">-->
+<!--            </div>-->
+
+            <div class="form-group">
+                <label for="fullname">Employee Full Name:</label>
+                <input type="text" id="fullname" name="fullname" class="form-control" th:value="${employeeJsp.fullname}">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" class="form-control" th:value="${employeeJsp.email}">
+            </div>
+
+            <div class="form-group">
+                <label for="role">Role:</label>
+                <input type="text" id="role" name="role" class="form-control" th:value="${employeeJsp.role}">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</header>
+
+<footer>
+    <div class="container mt-4">
+        <a href="employeeList" class="btn btn-secondary">Employee List</a>
+    </div>
+</footer>
+
+<!-- Bootstrap JS (Optional, if you want to use Bootstrap's interactive components) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

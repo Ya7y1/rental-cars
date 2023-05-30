@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Vehicle Details</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		  integrity="sha384-JjSmVgyd0p3pXB1rRibZUc8MakVcZpPt2WrK4pou2TEf0jBwBqVZdMhXf0Ho4+D" crossorigin="anonymous">
+	<!-- Font Awesome CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+		  integrity="sha256-F5d+pc7Y47aaRiKjtbVXgyLn+uP7V5b5K5ueCRVZqno=" crossorigin="anonymous" />
+	<!-- Custom CSS -->
+	<style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #777;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        th {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            border-top: none;
+        }
+
+        td {
+            font-size: 16px;
+            color: #777;
+        }
+
+        .request-form {
+            background-color: #007bff;
+            color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+        }
+
+        .request-form h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .form-control {
+            background-color: #f2f2f2;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            font-size: 16px;
+            color: #777;
+            padding: 15px;
+            height: auto;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        .btn-secondary {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 0;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px 30px;
+            transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #c82333;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+	<h1>Vehicle Details</h1>
+
+	<table class="table">
+
+		<tr>
+			<th>Vehicle Brand</th>
+			<td th:text="${vehicle.name}"></td>
+		</tr>
+		<tr>
+			<th>Vehicle Description</th>
+			<td th:text="${vehicle.description}"></td>
+		</tr>
+		<tr>
+			<th>Price</th>
+			<td th:text="${vehicle.price} + ' DH'"></td>
+		</tr>
+	</table>
+
+	<section class="ftco-section ftco-no-pt bg-light">
+		<div class="row">
+			<div class="col-md-6">
+				<form action="Savereservation" class="request-form ftco-animate" method="post">
+					<h2>Make Your Reservation</h2>
+					<div class="form-group">
+						<label for="dateS" class="label">Start Date:</label>
+						<input type="date" id="dateS" name="dateS" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="dateE" class="label">End Date:</label>
+						<input type="date" id="dateE" name="dateE" class="form-control" required>
+					</div>
+
+					<h3>Customer Information</h3>
+
+					<div class="form-group">
+						<label for="name" class="label">Name:</label>
+						<input type="text" id="name" name="customer.name" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="email" class="label">Email:</label>
+						<input type="email" id="email" name="customer.email" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="num" class="label">Phone Number:</label>
+						<input type="text" id="num" name="customer.num" class="form-control" required>
+					</div>
+
+					<input type="submit" value="Reserve" class="btn btn-secondary">
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<a href="homePage">Back to Vehicle List</a>
+	</footer>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUc8MakVcZpPt2WrK4pou2TEf0jBwBqVZdMhXf0Ho4+D" crossorigin="anonymous"></script>
+</body>
+</html>

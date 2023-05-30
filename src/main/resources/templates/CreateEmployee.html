@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-top: 50px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #2980b9;
+        }
+
+        /* New styles added for the form */
+        form {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        form div {
+            margin-bottom: 10px;
+        }
+
+        form label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        form input[type="text"],
+        form input[type="password"],
+        form input[type="number"] {
+            width: 200px;
+            padding: 5px;
+        }
+
+        form input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+    <title>Employee Creation</title>
+</head>
+
+<body>
+<header>
+    <div class="container">
+        <h1>Employee Creation</h1>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <form action="Saveemployee" method="post">
+            <div>
+                <label for="fullname">Employee full name:</label>
+                <input type="text" id="fullname" name="fullname">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email">
+            </div>
+<!--            <div>-->
+<!--                <label for="password">Password:</label>-->
+<!--                <input type="password" id="password" name="password">-->
+<!--            </div>-->
+            <div>
+                <label for="role">Role:</label>
+                <input type="text" id="role" name="Role">
+            </div>
+            <div>
+                <input type="submit" value="Save">
+            </div>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <a href="employeeList">Employees list</a>
+    </div>
+</footer>
+</body>
+
+</html>

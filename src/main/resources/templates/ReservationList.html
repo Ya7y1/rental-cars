@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Reservation List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    body {
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    button {
+      padding: 5px 10px;
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #c82333;
+    }
+  </style>
+</head>
+<body>
+<h1>Reservation List</h1>
+<table class="table">
+  <thead class="thead-light">
+  <tr>
+    <th>ID</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Reservation Date</th>
+    <th>Price</th>
+    <th>Customer Name</th>
+    <th>Vehicle Name</th>
+    <th>Customer contact</th>
+
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="reservation : ${reservations}">
+    <td th:text="${reservation.id}"></td>
+    <td th:text="${reservation.dateS}"></td>
+    <td th:text="${reservation.dateE}"></td>
+    <td th:text="${reservation.reservationDate}"></td>
+    <td th:text="${reservation.price}"></td>
+    <td th:text="${reservation.customer.name}"></td>
+    <td th:text="${reservation.vehicle.name}"></td>
+    <td th:text="${reservation.customer.num}"></td>
+    <td>
+      <form th:action="@{/deleteReservation}" method="post">
+        <input type="hidden" name="id" th:value="${reservation.id}">
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

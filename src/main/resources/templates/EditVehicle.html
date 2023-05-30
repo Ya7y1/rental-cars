@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-top: 50px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Vehicle Creation</title>
+</head>
+
+<body>
+<form th:action="updatevehicle" method="post" class="container mt-5">
+<!--    <div class="form-group">-->
+<!--        <label for="idVehicle">Vehicle ID:</label>-->
+<!--        <input type="text" id="idVehicle" name="idVehicle" value="${vehicleJsp.idVehicle}" class="form-control"-->
+<!--               readonly>-->
+<!--    </div>-->
+    <div class="form-group">
+        <label for="name">Vehicle Brand:</label>
+        <input type="text" id="name" name="name" value="" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" value=""
+               class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" value="" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+<footer class="container mt-3">
+    <a href="createVehicle" class="btn btn-secondary">Vehicle List</a>
+</footer>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
