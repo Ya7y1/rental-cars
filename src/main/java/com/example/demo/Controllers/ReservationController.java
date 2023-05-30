@@ -36,14 +36,15 @@ public class ReservationController {
 
     @RequestMapping("/Savereservation")
     public String savereservation(@ModelAttribute("reservation") Reservation reservation,
-                                  @RequestParam("idVehicle") long idVehicle,
-                                  ModelMap modelMap)  {
 
+                                  ModelMap modelMap)  {
+        System.out.println(reservation);
         Vehicle vehicle = vehicleService.getVehicle(reservation.getVehicle().getIdVehicle());
         reservation.setVehicle(vehicle);
         Customer customer = customerService.SaveCustomer(reservation.getCustomer());
         reservation.setCustomer(customer);
 
+        System.out.println("______________________");
         String messageController ="you'r informations is sent successfully";
         modelMap.addAttribute("messageJsp",messageController);
 
@@ -52,8 +53,8 @@ public class ReservationController {
         Reservation memo2 = reservationService.saveReservation(reservation) ;
         String messageController2="Reservation sent seccessfully";
         modelMap.addAttribute("messageJsp",messageController2);
-        return "Reserve";
-    }
+        return "HomePage";
+}
     @RequestMapping("/deleteReservation")
     public String deleteEmployee(@RequestParam("id") Long id  , ModelMap modelMap) {
         reservationService.deleteReservation(id);

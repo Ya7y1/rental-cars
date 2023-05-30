@@ -114,6 +114,7 @@
                     <div class="col-md-6">
                         <form th:action="@{/Savereservation}"
                               class="bg-light p-5 contact-form" method="post">
+                            <input th:type="text" id="vehicle" name="vehicle.idVehicle" th:value="${vehicle.idVehicle}" class="d-none">
                             <h2>Make Your Reservation</h2>
                             <div class="form-group">
                                 <label for="dateS" class="label">Start Date:</label>
